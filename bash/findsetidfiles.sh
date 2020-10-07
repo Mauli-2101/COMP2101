@@ -22,7 +22,7 @@ echo ""
 
 echo "Task"
 echo "===="
-find / -type f -exec ls 2>/dev/null -hs {} \; | du -hsx * | sort -n -r | head -n 12
+find / -type f -exec ls 2>/dev/null -hs {} \; | sort -n -r | head -n 12
 echo ""
 
 # for the task, add
