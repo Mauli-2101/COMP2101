@@ -6,7 +6,7 @@
 # Task 1:
 #  put the number of sides in a variable which is used as the range for the random number
 #  put the bias, or minimum value for the generated number in another variable
-#  roll the dice using the variables for the range and bias i.e. RANDOM % rage + bias
+#  roll the dice using the variables for the range and bias i.e. RANDOM % range + bias
 
 # Task 2:
 #  generate the sum of the dice
@@ -19,6 +19,12 @@ echo "Rolling..."
 # roll the dice and save the results
 die1=$(( RANDOM % 6 + 1))
 die2=$(( RANDOM % 6 + 1 ))
-echo "sum $die1 + $die2"
+(( sum=$die1+$die2 ))
+n=6
+(( avg=$sum/$n ))
 # display the results
+echo "die1 rolled: "$die1
+echo "die2 rolled: "$die2
 echo "Rolled $die1, $die2"
+echo "Sum of die1 and die2 is: "$sum
+echo "Average of die1 and die2 is: "$avg

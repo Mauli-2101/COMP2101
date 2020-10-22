@@ -12,10 +12,7 @@
 #   - use the same kind of testing that is already in the script to only download the tarfile if you don't already have it and
 #     to make sure the download and extraction commands work
 #     then delete the local copy of the tarfile if the extraction was successful
-wget -O ~/public_html/pics https://zonzorp.net/pics.tgz
-test -d ~/public_html/pics && cat <<EOF
-The public_html/pics directory uses $(du -sh ~/public_html/pics|awk '{print $1}' space on the disk)
-EOF
+
 # make sure we have a clean pics directory to start with
 rm -rf ~/public_html/pics
 mkdir -p ~/public_html/pics || (echo "Failed to make a new pics directory" && exit 1)
@@ -30,6 +27,7 @@ wget -q -O ~/public_html/pics/pics.zip http://zonzorp.net/pics.zip && unzip -d ~
 #     then delete the local copy of the tarfile if the extraction was successful
 
 # Make a report on what we have in the Pictures directory
+wget -q -O ~/public_html/pics/pics.tgz http://zonzorp.net/pics.tgz
 test -d ~/public_html/pics && cat <<EOF
 Found $(find ~/public_html/pics -type f|wc -l) files in the public_html/pics directory.
 The public_html/pics directory uses $(du -sh ~/public_html/pics|awk '{print $1}') space on the disk.
