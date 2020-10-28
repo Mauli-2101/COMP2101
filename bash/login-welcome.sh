@@ -17,7 +17,7 @@
 ###############
 # Variables   #
 ###############
-title="$(date +"%a")"
+title=$(date +"%a")
 echo "Please enter your name:"
 read user
 hname=$(hostname)
@@ -26,7 +26,6 @@ currenttime="$(date +"%R %p")"
 ###############
 # Main        #
 ###############
-cat <<EOF 
-Welcome to planet $hname,"$title $user!"
-"It is" $day "at" $currenttime
-EOF
+
+cowsay Welcome to planet $hname, "$title $user!" It is $day "at" $currenttime
+
